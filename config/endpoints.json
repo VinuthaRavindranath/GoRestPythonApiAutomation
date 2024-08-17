@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "base_url": "https://gorest.co.in"
+  },
+  "staging": {
+    "base_url": "https://gorest.co.in"
+  },
+  "uat": {
+    "base_url": "https://gorest.co.in"
+  },
+  "prod": {
+    "base_url": "https://gorest.co.in"
+  },
+  "environment": {
+    "env": "staging"
+  }
+}
