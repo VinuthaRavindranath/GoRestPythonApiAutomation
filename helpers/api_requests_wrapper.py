@@ -16,7 +16,7 @@ def get_request(url, params, headers, expected_status_code):
     response = requests.get(url=url, params=params, headers=headers)
     try:
         assert response.status_code == expected_status_code, f"received {response.status_code} but expected is {expected_status_code}"
-        return response.json()
+        return response
     except:
         pytest.fail("Get request Api call Failed")
 
@@ -25,7 +25,7 @@ def post_request(url, params, json, headers, expected_status_code):
     response = requests.post(url=url, params=params, json=json, headers=headers)
     try:
         assert response.status_code == expected_status_code, f"received {response.status_code} but expected is {expected_status_code}"
-        return response.json()
+        return response
     except:
         pytest.fail("Post request Api call Failed")
 
@@ -34,7 +34,7 @@ def put_request(url, params, json, headers, expected_status_code):
     response = requests.put(url=url, params=params, json=json, headers=headers)
     try:
         assert response.status_code == expected_status_code, f"received {response.status_code} but expected is {expected_status_code}"
-        return response.json()
+        return response
     except:
         pytest.fail("Put request Api call Failed")
 

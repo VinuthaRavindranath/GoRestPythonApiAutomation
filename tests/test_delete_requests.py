@@ -17,9 +17,10 @@ class TestDeleteRequests:
     def test_delete_users(self):
         post_response = api_requests_wrapper.post_request(ApiUrls.URL, None, GoRestRequests.CREATE_USER,
                                                           CommonUtility.get_custom_header(), 201)
-        user_id = post_response['id']
+        user_id = post_response.json()['id']
 
         delete_response = api_requests_wrapper.delete_request(ApiUrls.url_user_by_id(user_id), None, None,
                                                               CommonUtility.get_custom_header())
 
-        assert delete_response.status_code == 204, f"received {delete_response.status_code} but expected is 204"
+        assert post_response.status_code == 201, f"expected status code as 201 but got {post_response.status_code}"
+        assert delete_response.status_code == 204, f"expected status code as 204 but got {delete_response.status_code}"
